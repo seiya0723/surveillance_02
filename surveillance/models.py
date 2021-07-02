@@ -7,6 +7,7 @@ class Information(models.Model):
 
     url = models.URLField(verbose_name='URL',max_length=200)
     email = models.EmailField(verbose_name='メールアドレス',max_length=254)
+    user_id = models.IntegerField(verbose_name="ユーザーID")
     
 
     def __str__(self):

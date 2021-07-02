@@ -5,6 +5,8 @@ from .models import Information
 class InformationAdmin(admin.ModelAdmin):
 
     list_display    = [ "id","url","email" ]
+    #list_editable   = [ "url","email" ]
+
     
     search_fields   = [ "id","url","email" ]
 
@@ -13,3 +15,4 @@ class InformationAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Information,InformationAdmin)
+#admin.site.register(Information)

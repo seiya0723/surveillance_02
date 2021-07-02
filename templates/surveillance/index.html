@@ -11,6 +11,13 @@
 <body>
     <div class="header">サイト監視君  <i class="far fa-eye"></i></div>
 
+    <a href="{% url 'account_logout' %}">ログアウトする</a>
+
+    <p>こんにちは {{ request.user.username }} さん</p>
+
+    <p>こんにちは {{ request.user.last_name }} {{ request.user.first_name }}さん</p>
+
+
     <main class="container">
         <form method="POST">
             {% csrf_token %}
@@ -24,8 +31,9 @@
 
         {% for information in informations %}
         <div class="border">
-            {{ information.url }}
+            {{ information.url|urlize }}
             {{ information.email }}
+            {# {{ information.user_id }} #}
 
             <!--
                 urls.pyで決めたappnameとnameからurlの逆引きをする。スペース区切りで引数を指定

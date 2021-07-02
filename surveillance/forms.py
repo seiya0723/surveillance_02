@@ -6,6 +6,6 @@ class InformationForm(forms.ModelForm):
 
     class Meta:
         model   = Information
-        fields  = ['url','email']
+        fields  = ['url','email','user_id']
 
 
